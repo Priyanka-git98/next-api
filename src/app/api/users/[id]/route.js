@@ -14,3 +14,12 @@ console.log(payload);
 
 return NextResponse.json({result: payload})
 }
+
+export function DELETE(request, content){
+    let id = content.params.id
+    if(id){
+        return NextResponse.json({result: 'user deleted'})
+    }else{
+        return NextResponse.json({result: 'internal error, please try after sometime'})
+    }
+}
